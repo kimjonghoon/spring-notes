@@ -38,22 +38,23 @@
 			<%-- Approach 1: Property is of type java.lang.Boolean --%>
 			<td><form:checkbox path="preferences.receiveNewsletter"/></td>
 		</tr>
-
 		<tr>
 			<td>Interests:</td>
-			<%-- Approach 2: Property is of an array or of type java.util.Collection --%>
 			<td>
-				Quidditch: <form:checkbox path="preferences.interests" value="Quidditch"/>
-				Herbology: <form:checkbox path="preferences.interests" value="Herbology"/>
-				Defence Against the Dark Arts: <form:checkbox path="preferences.interests" value="Defence Against the Dark Arts"/>
+				<form:checkboxes path="preferences.interests" items="${interestList}"/>
 			</td>
 		</tr>
-
 		<tr>
-			<td>Favourite Word:</td>
-			<%-- Approach 3: Property is of type java.lang.Object --%>
+			<td>Skills:</td>
+			<td><form:select path="skills" items="${skills}"/></td>
+		</tr>
+		<tr>
+			<td>Country:</td>
 			<td>
-				Magic: <form:checkbox path="preferences.favouriteWord" value="Magic"/>
+			<form:select path="country">
+				<form:option value="-" label="--Please Select"/>
+				<form:options items="${countryList}" itemValue="code" itemLabel="name"/>
+			</form:select>
 			</td>
 		</tr>
 	</table>
