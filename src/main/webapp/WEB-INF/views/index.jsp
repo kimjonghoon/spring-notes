@@ -16,48 +16,30 @@
 <body>
 <h6>홈페이지</h6>
 <!--스프링 폼 태그 테스트 -->
-<form:form modelAttribute="user">
+<!--
+fullName
+google email account
+password
+sex(M|F)
+AI
+skills
+locale
+notes			 
+-->
+
+<form:form>
 	<table>
 		<tr>
-			<td>First Name:</td>
-			<td><form:input path="firstName"/></td>
-		</tr>
-		<tr>
-			<td>Last Name:</td>
-			<td><form:input path="lastName"/></td>
+			<td>Full Name:</td>
+			<td><form:input path="fullName"/></td>
 		</tr>
 		<tr>
 			<td colspan="2">
-				<input type="submit" value="Save Changes"/>
-			</td>
-		</tr>
-	</table>
-	<table>
-		<tr>
-			<td>Subscribe to newsletter?:</td>
-			<%-- Approach 1: Property is of type java.lang.Boolean --%>
-			<td><form:checkbox path="preferences.receiveNewsletter"/></td>
-		</tr>
-		<tr>
-			<td>Interests:</td>
-			<td>
-				<form:checkboxes path="preferences.interests" items="${interestList}"/>
-			</td>
-		</tr>
-		<tr>
-			<td>Skills:</td>
-			<td><form:select path="skills" items="${skills}"/></td>
-		</tr>
-		<tr>
-			<td>Country:</td>
-			<td>
-			<form:select path="country">
-				<form:option value="-" label="--Please Select"/>
-				<form:options items="${countryList}" itemValue="code" itemLabel="name"/>
-			</form:select>
+				<input type="submit" value="Submit"/>
 			</td>
 		</tr>
 	</table>
 </form:form>
+
 </body>
 </html>
